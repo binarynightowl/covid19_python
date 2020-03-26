@@ -1,4 +1,4 @@
-from .covid19_data import get_data
+from covid19_data import get_data
 import json, urllib.request
 
 test_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/Coronavirus_2019_nCoV_Cases/FeatureServer/1' \
@@ -17,6 +17,6 @@ test_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/C
 
 
 def test_get_data():
-    data = get_data(test_url)[0]['attributes']['confirmed']
-    test_data = json.loads(urllib.request.urlopen(test_url).read().decode())['features'][0]['attributes']['confirmed']
+    data = get_data.get_data(test_url)[0]['attributes']['Confirmed']
+    test_data = json.loads(urllib.request.urlopen(test_url).read().decode())['features'][0]['attributes']['Confirmed']
     assert data == test_data
