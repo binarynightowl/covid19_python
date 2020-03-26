@@ -19,6 +19,7 @@ for more information on how data is obtained*)
 * Very flexible and will return the data in multiple forms (*read documentation section for more info*)
     * Can return a object with the data as attributes
     * Can return a JSON document
+* Super simplistic and lightweight and does not rely on any external python packages
 
 
 ## Installing
@@ -31,10 +32,90 @@ Alternatively, you can grab the latest source code from [GitHub](https://github.
 $ git clone git://github.com/binarynightowl/covid19_python
 $ python setup.py install
 ```
-Y
 
-## Documentation
 
+# Documentation
+
+## Usage
+There are two ways of getting data with covid19-data
+1. As an object with attributes of COVID data
+    * Get the data by name
+        ```python
+        import covid19_data
+    
+        # example of how to get data by name
+        # .dataByName([string of item to find: any state, country, or total amount (do not use spaces EX: NewYork)])
+        # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
+        
+        total = covid19_data.dataByName("Total")    # create an object for our total data
+        china = covid19_data.dataByName("China")
+        US = covid19_data.dataByName("US")
+        new_york = covid19_data.dataByName("NewYork")
+        print(total.deaths, china.recovered, US.cases)
+        ```
+        This should print something similar to:
+        ```
+        22184 74181 69246
+        ```
+    * Get the data by abbreviation
+        ```python
+        import covid19_data        
+        
+        # example of how to get data by abbreviated name
+        # .dataByNameShort([two letter string of item you want to find, can be any state])
+        # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
+        
+        texas = covid19_data.dataByNameShort("TX")    # create an object for our total data
+        california = covid19_data.dataByNameShort("CA")
+        new_york = covid19_data.dataByNameShort("NY")
+        print(texas.cases, california.deaths, new_york.cases)
+        ```
+        This should print something similar to:
+        ```
+        1353 67 33033
+        ```
+2. As a JSON document 
+    * Get the json by name
+        ```python
+        import covid19_data
+        
+        # example of how to get json by name
+        # .jsonByName([string of item you want to find, can be any state, country, or total amount (do not use spaces EX: NewYork)])
+        # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
+        
+        total = covid19_data.jsonByName("Total")    # create an object for our total data
+        china = covid19_data.jsonByName("China")
+        US = covid19_data.jsonByName("US")
+        new_york = covid19_data.jsonByName("NewYork")
+        print(total, china, US, new_york)
+        ```
+        This should print something similar to:
+        ```
+        {'Confirmed': 492603, 'Deaths': 22184, 'Recovered': 119918}
+        {'Confirmed': 81782, 'Deaths': 3291, 'Recovered': 74181, 'Active': 4310}
+        {'Confirmed': 69246, 'Deaths': 1046, 'Recovered': 619, 'Active': 0}
+        {'Confirmed': 33033, 'Deaths': 366, 'Recovered': 0, 'Active': 0}
+        ```
+    * Get the json by abbreviation
+        ```python
+        import covid19_data
+        
+        # example of how to get json by abbreviated name
+        # .jsonByNameShort([two letter string of item you want to find, can be any state])
+        # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
+        
+        texas = covid19_data.jsonByNameShort("TX")    # create an object for our total data
+        california = covid19_data.jsonByNameShort("CA")
+        new_york = covid19_data.jsonByNameShort("NY")
+        print(texas, california, new_york)
+        ```
+        This should print something similar to:
+        ```
+        {'Confirmed': 1353, 'Deaths': 17, 'Recovered': 0, 'Active': 0}
+        {'Confirmed': 3172, 'Deaths': 67, 'Recovered': 0, 'Active': 0}
+        {'Confirmed': 33033, 'Deaths': 366, 'Recovered': 0, 'Active': 0}
+        ```
+  
 #### Sources
 This project utilizes [John Hopkins University](https://coronavirus.jhu.edu/map.html)'s 
 [ArcGIS data layer](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/ncov_cases/FeatureServer) 
