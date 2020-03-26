@@ -1,6 +1,5 @@
 from setuptools import setup
 import setuptools
-import bumpversion
 
 from os import path
 
