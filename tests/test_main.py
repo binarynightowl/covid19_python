@@ -1,4 +1,4 @@
-from covid19_data import get_object
+import covid19_data
 from covid19_data import get_data
 
 total_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/Coronavirus_2019_nCoV_Cases' \
@@ -29,28 +29,41 @@ states_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/servi' \
              '%20active&resultRecordCount=200&f=pjson'
 
 
-def test_Items():
-    name = 'Texas'
-    object = get_object.Item(name)
-    assert object.data == get_data.get_all_data([total_url, countries_url, states_url])
-    assert object.fullJSON == get_data.get_all_data([total_url, countries_url, states_url])
-    assert name == object.caller
-
-
-def test_Item():
-    total = 'Total'
-    state = 'Texas'
-    country = 'US'
-
+def test_dataByName():
+    Texas = covid19_data.dataByName("Texas")
+    Total = covid19_data.dataByName("Total")
+    China = covid19_data.dataByName("China")
     data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert Total.deaths == data['Total']['Deaths']
+    assert Texas.deaths == data['Texas']['Deaths']
+    assert China.deaths == data['China']['Deaths']
 
-    Total = get_object.Item(total)
-    Total.rtrn_dat()
-    State = get_object.Item(state)
-    State.rtrn_dat()
-    Country = get_object.Item(country)
-    Country.rtrn_dat()
 
-    assert Total.deaths == data[total]['Deaths']
-    assert State.deaths == data[state]['Deaths']
-    assert Country.deaths == data[country]['Deaths']
+def test_dataByNameShort():
+    Texas = covid19_data.dataByNameShort("TX")
+    California = covid19_data.dataByNameShort("CA")
+    NewYork = covid19_data.dataByNameShort("NY")
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert California.deaths == data['California']['Deaths']
+    assert Texas.deaths == data['Texas']['Deaths']
+    assert NewYork.deaths == data['NewYork']['Deaths']
+
+
+def test_jsonByName():
+    Texas = covid19_data.jsonByName("Texas")
+    Total = covid19_data.jsonByName("Total")
+    China = covid19_data.jsonByName("China")
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert Total == data['Total']
+    assert Texas == data['Texas']
+    assert China == data['China']
+
+
+def test_jsonByNameShort():
+    Texas = covid19_data.jsonByNameShort("TX")
+    California = covid19_data.jsonByNameShort("CA")
+    NewYork = covid19_data.jsonByNameShort("NY")
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert California == data['California']
+    assert Texas == data['Texas']
+    assert NewYork == data['NewYork']
