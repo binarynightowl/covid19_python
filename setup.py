@@ -10,7 +10,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='covid19-data',
-    version='0.0.4',
+    version='0.1.0',
     description='A fast, powerful, and flexible way to get up to date COVID-19 data for any major city, state, '
                 'country, and total world wide data',
     long_description=long_description,
