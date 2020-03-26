@@ -39,12 +39,14 @@ $ python setup.py install
 ## Usage
 There are two ways of getting data with covid19-data
 1. As an object with attributes of COVID data
-    * Get the data by name
+    * Get the data by name (*note: spacing and capitalization do not matter, EX: `total = covid19_data.dataByName("New 
+    York")`, 
+    `total = covid19_data.dataByName("newyork")`, and `total = covid19_data.dataByName("NEW YORK")` are all interchangable*)
         ```python
         import covid19_data
     
         # example of how to get data by name
-        # .dataByName([string of item to find: any state, country, or total amount (do not use spaces EX: NewYork)])
+        # .dataByName([string of item to find: any state, country, or total amount (spacing and capitalization do not matter)])
         # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
         
         total = covid19_data.dataByName("Total")    # create an object for our total data
@@ -57,7 +59,9 @@ There are two ways of getting data with covid19-data
         ```
         22184 74181 69246
         ```
-    * Get the data by abbreviation
+    * Get the data by abbreviation (*note: spacing and capitalization do not matter, EX: `total = covid19_data.dataByName("New 
+    York")`, 
+    `total = covid19_data.dataByName("newyork")`, and `total = covid19_data.dataByName("NEW YORK")` are all interchangable*)
         ```python
         import covid19_data        
         
@@ -75,12 +79,14 @@ There are two ways of getting data with covid19-data
         1353 67 33033
         ```
 2. As a JSON document 
-    * Get the json by name
+    * Get the json by name (*note: spacing and capitalization do not matter, EX: `total = covid19_data.dataByName("New 
+    York")`, 
+    `total = covid19_data.dataByName("newyork")`, and `total = covid19_data.dataByName("NEW YORK")` are all interchangable*)
         ```python
         import covid19_data
         
         # example of how to get json by name
-        # .jsonByName([string of item you want to find, can be any state, country, or total amount (do not use spaces EX: NewYork)])
+        # .jsonByName([string of item you want to find, can be any state, country, or total amount (spacing and capitalization do not matter)])
         # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
         
         total = covid19_data.jsonByName("Total")    # create an object for our total data
@@ -96,7 +102,9 @@ There are two ways of getting data with covid19-data
         {'Confirmed': 69246, 'Deaths': 1046, 'Recovered': 619, 'Active': 0}
         {'Confirmed': 33033, 'Deaths': 366, 'Recovered': 0, 'Active': 0}
         ```
-    * Get the json by abbreviation
+    * Get the json by abbreviation (*note: spacing and capitalization do not matter, EX: `total = covid19_data.dataByName("New 
+    York")`, 
+    `total = covid19_data.dataByName("newyork")`, and `total = covid19_data.dataByName("NEW YORK")` are all interchangable*)
         ```python
         import covid19_data
         
