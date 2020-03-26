@@ -1,13 +1,20 @@
 # COVID19-Data
 ![Build Status](https://github.com/binarynightowl/covid19_python/workflows/Build%20Status/badge.svg)
 ![GitHub issues](https://img.shields.io/github/issues/binarynightowl/covid19_python)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/covid19-data?style=plastic&logo=python) 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/covid19-data?style=plastic&logo=python)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/binarynightowl/covid19_python?logo=github&style=plastic)
 ![PyPI](https://img.shields.io/pypi/v/covid19-data?label=PyPi&logo=PyPi&style=plastic)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/binarynightowl/covid19_python?include_prereleases&label=pre-release&logo=github&style=plastic)
 
-
-Gets data for CoronaVirus (COVID-19) using John Hopkins' [ArcGIS application layer](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/ncov_cases/FeatureServer) using a query to return a JSON document, so unlike similar packages it does not rely on a datasheet that is might not be up to date, but queries the source database directly. This allows us to get the most up to date information that is currently available, as well enabling us to get any of the data we want without any that is not wanted.
+covid19-data is a powerful and easy to use Python client for getting COVID-19 data (*see sources below
+for more information on how data is obtained*)
+* Uses a faster method of getting data than similar packages
+    * Does not rely on scraping sites, parsing files, or getting (old) data from a repository, so you do not depend on the 
+    repository being updated to get up to date data
+* Very fast and responsive
+    * The client only gets the data once, and parses it into a search friendly format in the backend, so once the data is 
+    loaded ( *~* 1 second ), data for the World or any Country/State can be retrieved instantly
+* User friendly and simple to implement into your application
 
 
 ## Sources
