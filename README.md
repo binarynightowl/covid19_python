@@ -5,7 +5,6 @@
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/binarynightowl/covid19_python?logo=github">
 <img alt="PyPI" src="https://img.shields.io/pypi/v/covid19-data?label=PyPi&logo=PyPi">
 <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/binarynightowl/covid19_python?include_prereleases&label=pre-release&logo=github">
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/binarynightowl/covid19_python?include_prereleases&label=pre-release&logo=github&style=plastic)
 
 ## Overview
 covid19-data is a powerful and easy to use Python client for getting COVID-19 data (*see sources below
