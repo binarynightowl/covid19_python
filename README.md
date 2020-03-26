@@ -32,7 +32,7 @@ Alternatively, you can grab the latest source code from [GitHub](https://github.
 $ git clone git://github.com/binarynightowl/covid19_python
 $ python setup.py install
 ```
-
+Y
 
 ## Documentation
 
