@@ -15,7 +15,6 @@ def get_data(url):
 
 
 def get_all_data(links_list):
-    test_val = 0
     for link in links_list:
         doc = get_data(link)
         for item in doc:
