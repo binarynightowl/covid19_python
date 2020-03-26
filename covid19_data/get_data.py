@@ -17,10 +17,7 @@ def get_all_data(links_list):
     for link in links_list:
         doc = get_data(link)
         for item in doc:
-            if 'confirmed' in item['attributes'].keys():
-                attributes = item['attributes']
-                document.update({'Total': attributes})
-            elif 'Country_Region' in item['attributes'].keys():
+            if 'Country_Region' in item['attributes'].keys():
                 attributes = item['attributes']
                 country = re.sub(remove_space, '', attributes['Country_Region'])
                 attributes.pop('Country_Region', None)
@@ -32,7 +29,7 @@ def get_all_data(links_list):
                 document.update({stateprov: attributes})
             else:
                 attributes = item['attributes']
-                name = "unclassified"
+                name = "Total"
                 document.update({name: attributes})
 
     return document
