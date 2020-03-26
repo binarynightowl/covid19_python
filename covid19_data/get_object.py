@@ -1,7 +1,4 @@
-from get_data import get_all_data
-import inspect
-
-test_val = 0
+from .get_data import get_all_data
 
 
 class Items:
@@ -33,18 +30,15 @@ class Items:
                  '=Country_Region=%27US%27&outFields=Province_State,confirmed,deaths,recovered,' \
                  '%20active&resultRecordCount=200&f=pjson'
     data = get_all_data([total_url, countries_url, states_url])
-    test_val += 1
-    print(test_val)
 
     def __init__(self, s):
         self.URLS = self.states_url
         self.fullJSON = self.data
-        # s = str(inspect.stack()[1][4]).split()[0][2:]
         self.caller = s
 
 
 class Item(Items):
-    def rtrn_item_json(self):
+    def rtrn_item_json(self, name=None):
         json = self.fullJSON[self.caller]
         self.json = json
 

@@ -1,10 +1,8 @@
 import json
 import urllib.request
+import re
 
 document = {
-}
-
-used_id = {
 }
 
 
@@ -15,21 +13,21 @@ def get_data(url):
 
 
 def get_all_data(links_list):
+    remove_space = re.compile(r'\s+')
     for link in links_list:
         doc = get_data(link)
         for item in doc:
             if 'confirmed' in item['attributes'].keys():
                 attributes = item['attributes']
                 document.update({'Total': attributes})
-                used_id.update()
             elif 'Country_Region' in item['attributes'].keys():
                 attributes = item['attributes']
-                country = attributes['Country_Region']
+                country = re.sub(remove_space, '', attributes['Country_Region'])
                 attributes.pop('Country_Region', None)
                 document.update({country: attributes})
             elif 'Province_State' in item['attributes'].keys():
                 attributes = item['attributes']
-                stateprov = attributes['Province_State']
+                stateprov = re.sub(remove_space, '', attributes['Province_State'])
                 attributes.pop('Province_State', None)
                 document.update({stateprov: attributes})
             else:

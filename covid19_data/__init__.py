@@ -1,17 +1,17 @@
-from get_data import get_all_data
-from get_object import Item, Items
+from .get_data import get_all_data
+from .get_object import Item, Items
 import inspect
 
 states = {
     'AK': 'Alaska',
     'AL': 'Alabama',
     'AR': 'Arkansas',
-    'AS': 'American Samoa',
+    'AS': 'AmericanSamoa',
     'AZ': 'Arizona',
     'CA': 'California',
     'CO': 'Colorado',
     'CT': 'Connecticut',
-    'DC': 'District of Columbia',
+    'DC': 'DistrictofColumbia',
     'DE': 'Delaware',
     'FL': 'Florida',
     'GA': 'Georgia',
@@ -30,48 +30,88 @@ states = {
     'MI': 'Michigan',
     'MN': 'Minnesota',
     'MO': 'Missouri',
-    'MP': 'Northern Mariana Islands',
+    'MP': 'NorthernMarianaIslands',
     'MS': 'Mississippi',
     'MT': 'Montana',
     'NA': 'National',
-    'NC': 'North Carolina',
-    'ND': 'North Dakota',
+    'NC': 'NorthCarolina',
+    'ND': 'NorthDakota',
     'NE': 'Nebraska',
-    'NH': 'New Hampshire',
-    'NJ': 'New Jersey',
-    'NM': 'New Mexico',
+    'NH': 'NewHampshire',
+    'NJ': 'NewJersey',
+    'NM': 'NewMexico',
     'NV': 'Nevada',
-    'NY': 'New York',
+    'NY': 'NewYork',
     'OH': 'Ohio',
     'OK': 'Oklahoma',
     'OR': 'Oregon',
     'PA': 'Pennsylvania',
-    'PR': 'Puerto Rico',
-    'RI': 'Rhode Island',
-    'SC': 'South Carolina',
-    'SD': 'South Dakota',
+    'PR': 'PuertoRico',
+    'RI': 'RhodeIsland',
+    'SC': 'SouthCarolina',
+    'SD': 'SouthDakota',
     'TN': 'Tennessee',
     'TX': 'Texas',
     'UT': 'Utah',
     'VA': 'Virginia',
-    'VI': 'Virgin Islands',
+    'VI': 'VirginIslands',
     'VT': 'Vermont',
     'WA': 'Washington',
     'WI': 'Wisconsin',
-    'WV': 'West Virginia',
+    'WV': 'WestVirginia',
     'WY': 'Wyoming'
 }
 
 
-def dataByName():
+def dataByCallerName():
     s = str(inspect.stack()[1][4]).split()[0][2:]
     item = Item(s)
     item.rtrn_dat()
     return item
 
 
-Texas = dataByName()
-California = dataByName()
-Washington = dataByName()
+def dataByCallerNameShort():
+    s = str(inspect.stack()[1][4]).split()[0][2:]
+    item = Item(states[s])
+    item.rtrn_dat()
+    return item
 
-print(Texas.cases, California.cases, Washington.cases)
+
+def dataByName(name):
+    item = Item(name)
+    item.rtrn_dat()
+    return item
+
+
+def dataByNameShort(name):
+    name = name.upper()
+    item = Item(states[name])
+    item.rtrn_dat()
+    return item
+
+
+def jsonByCallerName():
+    s = str(inspect.stack()[1][4]).split()[0][2:]
+    item = Item(s)
+    item.rtrn_dat()
+    return item.json
+
+
+def jsonByCallerNameShort():
+    s = str(inspect.stack()[1][4]).split()[0][2:]
+    item = Item(states[s])
+    item.rtrn_dat()
+    return item.json
+
+
+def jsonByName(name):
+    item = Item(name)
+    item.rtrn_dat()
+    return item.json
+
+
+def jsonByNameShort(name):
+    name = name.upper()
+    item = Item(states[name])
+    item.rtrn_dat()
+    return item.json
