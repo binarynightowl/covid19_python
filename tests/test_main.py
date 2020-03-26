@@ -30,40 +30,60 @@ states_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/servi' \
 
 
 def test_dataByName():
-    Texas = covid19_data.dataByName("Texas")
-    Total = covid19_data.dataByName("Total")
-    China = covid19_data.dataByName("China")
+    Texas = covid19_data.dataByName("TeXaA")
+    Total = covid19_data.dataByName("tOtAl")
+    China = covid19_data.dataByName("ChInA")
     data = get_data.get_all_data([total_url, countries_url, states_url])
-    assert Total.deaths == data['Total']['Deaths']
-    assert Texas.deaths == data['Texas']['Deaths']
-    assert China.deaths == data['China']['Deaths']
+    assert Total.deaths == data['Total'.upper()]['Deaths']
+    assert Texas.deaths == data['Texas'.upper()]['Deaths']
+    assert China.deaths == data['China'.upper()]['Deaths']
 
 
 def test_dataByNameShort():
-    Texas = covid19_data.dataByNameShort("TX")
+    Texas = covid19_data.dataByNameShort("Tx")
     California = covid19_data.dataByNameShort("CA")
-    NewYork = covid19_data.dataByNameShort("NY")
+    NewYork = covid19_data.dataByNameShort("nY")
     data = get_data.get_all_data([total_url, countries_url, states_url])
-    assert California.deaths == data['California']['Deaths']
-    assert Texas.deaths == data['Texas']['Deaths']
-    assert NewYork.deaths == data['NewYork']['Deaths']
+    assert California.deaths == data['California'.upper()]['Deaths']
+    assert Texas.deaths == data['Texas'.upper()]['Deaths']
+    assert NewYork.deaths == data['NewYork'.upper()]['Deaths']
 
 
 def test_jsonByName():
-    Texas = covid19_data.jsonByName("Texas")
-    Total = covid19_data.jsonByName("Total")
-    China = covid19_data.jsonByName("China")
+    Texas = covid19_data.jsonByName("TeXaA")
+    Total = covid19_data.jsonByName("tOtAl")
+    China = covid19_data.jsonByName("ChInA")
     data = get_data.get_all_data([total_url, countries_url, states_url])
-    assert Total == data['Total']
-    assert Texas == data['Texas']
-    assert China == data['China']
+    assert Total == data['Total'.upper()]
+    assert Texas == data['Texas'.upper()]
+    assert China == data['China'.upper()]
 
 
 def test_jsonByNameShort():
-    Texas = covid19_data.jsonByNameShort("TX")
+    Texas = covid19_data.jsonByNameShort("Tx")
     California = covid19_data.jsonByNameShort("CA")
-    NewYork = covid19_data.jsonByNameShort("NY")
+    NewYork = covid19_data.jsonByNameShort("nY")
     data = get_data.get_all_data([total_url, countries_url, states_url])
-    assert California == data['California']
-    assert Texas == data['Texas']
-    assert NewYork == data['NewYork']
+    assert California == data['California'.upper()]
+    assert Texas == data['Texas'.upper()]
+    assert NewYork == data['NewYork'.upper()]
+
+
+def test_dataByName_spaces():
+    NewYork1 = covid19_data.dataByName("new york")
+    NewYork2 = covid19_data.dataByName("New York")
+    NewYork3 = covid19_data.dataByName("NEWYORK")
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert NewYork1.deaths == data['Total'.upper()]['Deaths']
+    assert NewYork2.deaths == data['Texas'.upper()]['Deaths']
+    assert NewYork3.deaths == data['China'.upper()]['Deaths']
+
+
+def test_jsonByName_spaces():
+    NewYork1 = covid19_data.jsonByName("new york")
+    NewYork2 = covid19_data.jsonByName("New York")
+    NewYork3 = covid19_data.jsonByName("NEWYORK")
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert NewYork1 == data['NewYork'.upper()]
+    assert NewYork2 == data['NewYork'.upper()]
+    assert NewYork3 == data['NewYork'.upper()]
