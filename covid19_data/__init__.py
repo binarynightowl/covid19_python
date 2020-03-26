@@ -78,6 +78,7 @@ def dataByCallerNameShort():
 
 
 def dataByName(name):
+    name = name.upper()
     item = Item(name)
     item.rtrn_dat()
     return item
@@ -105,6 +106,7 @@ def jsonByCallerNameShort():
 
 
 def jsonByName(name):
+    name = name.upper()
     item = Item(name)
     item.rtrn_dat()
     return item.json
