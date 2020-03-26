@@ -30,7 +30,7 @@ states_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/servi' \
 
 
 def test_dataByName():
-    Texas = covid19_data.dataByName("TeXaA")
+    Texas = covid19_data.dataByName("TeXaS")
     Total = covid19_data.dataByName("tOtAl")
     China = covid19_data.dataByName("ChInA")
     data = get_data.get_all_data([total_url, countries_url, states_url])
@@ -50,7 +50,7 @@ def test_dataByNameShort():
 
 
 def test_jsonByName():
-    Texas = covid19_data.jsonByName("TeXaA")
+    Texas = covid19_data.jsonByName("TeXaS")
     Total = covid19_data.jsonByName("tOtAl")
     China = covid19_data.jsonByName("ChInA")
     data = get_data.get_all_data([total_url, countries_url, states_url])
@@ -74,9 +74,9 @@ def test_dataByName_spaces():
     NewYork2 = covid19_data.dataByName("New York")
     NewYork3 = covid19_data.dataByName("NEWYORK")
     data = get_data.get_all_data([total_url, countries_url, states_url])
-    assert NewYork1.deaths == data['Total'.upper()]['Deaths']
-    assert NewYork2.deaths == data['Texas'.upper()]['Deaths']
-    assert NewYork3.deaths == data['China'.upper()]['Deaths']
+    assert NewYork1.deaths == data['NewYork'.upper()]['Deaths']
+    assert NewYork2.deaths == data['NewYork'.upper()]['Deaths']
+    assert NewYork3.deaths == data['NewYork'.upper()]['Deaths']
 
 
 def test_jsonByName_spaces():

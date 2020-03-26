@@ -38,9 +38,9 @@ def test_Items():
 
 
 def test_Item():
-    total = 'Total'
-    state = 'Texas'
-    country = 'US'
+    total = 'Total'.upper()
+    state = 'Texas'.upper()
+    country = 'US'.upper()
 
     data = get_data.get_all_data([total_url, countries_url, states_url])
 

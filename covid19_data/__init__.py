@@ -86,7 +86,7 @@ def dataByName(name):
 
 def dataByNameShort(name):
     name = re.sub(remove_space, '', name).upper()
-    item = Item(states[name])
+    item = Item(states[name].upper())
     item.rtrn_dat()
     return item
 
@@ -114,6 +114,6 @@ def jsonByName(name):
 
 def jsonByNameShort(name):
     name = re.sub(remove_space, '', name).upper()
-    item = Item(states[name])
+    item = Item(states[name].upper())
     item.rtrn_dat()
     return item.json
