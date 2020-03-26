@@ -1,7 +1,7 @@
 import covid19_data
 
 # example of how to get data by name
-# .dataByName([string of item you want to find, can be any state, country, or total amount (do not use spaces EX: NewYork)])
+# .dataByName([string of item you want to find, can be any state, country, or total amount (spacing and capitalization do not matter)])
 # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
 
 total = covid19_data.dataByName("Total")  # create an object for our total data
@@ -11,7 +11,7 @@ new_york = covid19_data.dataByName("NewYork")
 print(total.deaths, china.recovered, US.cases)
 
 # example of how to get data by abbreviated name
-# .dataByNameShort([two letter string of item you want to find, can be any state])
+# .dataByNameShort([two letter string of item you want to find, can be any state (spacing and capitalization do not matter)])
 # object has three useful attributes: .deaths, .cases (.confirmed also works), and .recovered
 
 texas = covid19_data.dataByNameShort("TX")  # create an object for our total data
