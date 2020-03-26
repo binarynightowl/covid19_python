@@ -1,7 +1,7 @@
 from .get_data import get_all_data
 from .get_object import Item, Items
 import inspect
-
+import re
 states = {
     'AK': 'Alaska',
     'AL': 'Alabama',
@@ -61,7 +61,7 @@ states = {
     'WV': 'WestVirginia',
     'WY': 'Wyoming'
 }
-
+remove_space = re.compile(r'\s+')
 
 def dataByCallerName():
     s = str(inspect.stack()[1][4]).split()[0][2:]
@@ -78,14 +78,14 @@ def dataByCallerNameShort():
 
 
 def dataByName(name):
-    name = name.upper()
+    name = re.sub(remove_space, '', name).upper()
     item = Item(name)
     item.rtrn_dat()
     return item
 
 
 def dataByNameShort(name):
-    name = name.upper()
+    name = re.sub(remove_space, '', name).upper()
     item = Item(states[name])
     item.rtrn_dat()
     return item
@@ -106,14 +106,14 @@ def jsonByCallerNameShort():
 
 
 def jsonByName(name):
-    name = name.upper()
+    name = re.sub(remove_space, '', name).upper()
     item = Item(name)
     item.rtrn_dat()
     return item.json
 
 
 def jsonByNameShort(name):
-    name = name.upper()
+    name = re.sub(remove_space, '', name).upper()
     item = Item(states[name])
     item.rtrn_dat()
     return item.json
