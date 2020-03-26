@@ -46,7 +46,6 @@ class Item(Items):
         self._confirmed()
         self._deaths()
         self._recovered()
-        self._active()
 
     def _confirmed(self):
         self.confirmed = self.json['Confirmed']
@@ -57,6 +56,3 @@ class Item(Items):
 
     def _recovered(self):
         self.recovered = self.json['Recovered']
-
-    def _active(self):
-        self.active = self.json['Active']
