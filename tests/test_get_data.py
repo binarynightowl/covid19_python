@@ -25,4 +25,4 @@ def test_get_data():
 def test_get_all_data():
     data = get_data.get_all_data([test_url])['Total'.upper()]['Confirmed']
     test_data = json.loads(urllib.request.urlopen(test_url).read().decode())['features'][0]['attributes']['Confirmed']
-    assert data == test_data
+    assert data == test_data  # test comment
