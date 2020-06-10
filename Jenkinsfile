@@ -7,7 +7,7 @@ pipeline {
 
 PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
 if [ ! -d "venv35" ]; then
-        virtualenv --p python3.5 venv35
+        virtualenv -p python3.5 venv35
 fi
 
 if [ ! -d "venv36" ]; then
