@@ -1,10 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Init Virtual Envs') {
-      steps {
-        echo 'Creating Virtual Environments'
-        sh '''#!/bin/sh
+    stage('Build') {
+      parallel {
+        stage('Init Virtual Envs') {
+          steps {
+            echo 'Creating Virtual Environments'
+            sh '''#!/bin/sh
 
 PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
 if [ ! -d "venv35" ]; then
@@ -22,8 +24,8 @@ fi
 if [ ! -d "venv38" ]; then
         virtualenv -p python3.8 venv38
 fi'''
-        echo 'Populating Virtual Environments'
-        sh '''#!/bin/sh
+            echo 'Populating Virtual Environments'
+            sh '''#!/bin/sh
 
 . venv35/bin/activate
 pip install -r requirements.txt
@@ -40,7 +42,19 @@ deactivate
 . venv38/bin/activate
 pip install -r requirements.txt
 deactivate'''
-        echo 'Virtual Environments have been created!'
+            echo 'Virtual Environments have been created!'
+          }
+        }
+
+        stage('Timestamp') {
+          steps {
+            timestamps() {
+              echo 'Build Started at'
+            }
+
+          }
+        }
+
       }
     }
 
@@ -95,6 +109,26 @@ pip install pytest
 pip install pytest-cov
 
 pytest'''
+          }
+        }
+
+      }
+    }
+
+    stage('Clean Up') {
+      parallel {
+        stage('Clean Workspace') {
+          steps {
+            cleanWs(cleanWhenSuccess: true, skipWhenFailed: true)
+          }
+        }
+
+        stage('Timestamp') {
+          steps {
+            timestamps() {
+              echo 'Complete!'
+            }
+
           }
         }
 
