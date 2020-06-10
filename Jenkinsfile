@@ -3,46 +3,24 @@ pipeline {
   stages {
     stage('Build') {
       parallel {
-        stage('Init Virtual Envs') {
+        stage('Init Virtual Env (Python 3.5)') {
           steps {
-            echo 'Creating Virtual Environments'
+            echo 'Creating Virtual Environment for Python 3.5'
             sh '''#!/bin/sh
 
 PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
 if [ ! -d "venv35" ]; then
         virtualenv -p python3.5 venv35
-fi
-
-if [ ! -d "venv36" ]; then
-        virtualenv -p python3.6 venv36
-fi
-
-if [ ! -d "venv37" ]; then
-        virtualenv -p python3.7 venv37
-fi
-
-if [ ! -d "venv38" ]; then
-        virtualenv -p python3.8 venv38
 fi'''
-            echo 'Populating Virtual Environments'
+            echo 'Populating venv35'
             sh '''#!/bin/sh
 
 . venv35/bin/activate
 pip install -r requirements.txt
-deactivate
-
-. venv36/bin/activate
-pip install -r requirements.txt
-deactivate
-
-. venv37/bin/activate
-pip install -r requirements.txt
-deactivate
-
-. venv38/bin/activate
-pip install -r requirements.txt
+pip install pytest
+pip install pytest-cov
 deactivate'''
-            echo 'Virtual Environments have been created!'
+            echo 'venv35 has been successfully created!'
           }
         }
 
