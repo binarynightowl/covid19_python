@@ -25,19 +25,19 @@ fi'''
 
 . venv35/bin/activate
 pip install -r requirements.txt
-. venv35/bin/deactivate
+deactivate
 
 . venv36/bin/activate
 pip install -r requirements.txt
-. venv36/bin/deactivate
+deactivate
 
 . venv37/bin/activate
 pip install -r requirements.txt
-. venv37/bin/deactivate
+deactivate
 
 . venv38/bin/activate
 pip install -r requirements.txt
-. venv38/bin/deactivate'''
+deactivate'''
       }
     }
 
