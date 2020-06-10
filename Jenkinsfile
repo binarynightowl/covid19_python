@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Init Virtual Envs') {
       steps {
-        sh '''PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
+        sh '''#!/bin/sh
+
+PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
 if [ ! -d "venv35" ]; then
         virtualenv --python=/usr/local/share/man/man1/python3.5.1 venv35
 fi
@@ -19,7 +21,9 @@ fi
 if [ ! -d "venv38" ]; then
         virtualenv --python=/usr/local/share/man/man1/python3.8.1 venv38
 fi'''
-        sh '''. venv35/bin/activate
+        sh '''#!/bin/sh
+
+. venv35/bin/activate
 pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
 . venv35/bin/deactivate
 
