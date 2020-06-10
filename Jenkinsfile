@@ -24,19 +24,19 @@ fi'''
         sh '''#!/bin/sh
 
 . venv35/bin/activate
-pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
+pip install -r requirements.txt
 . venv35/bin/deactivate
 
 . venv36/bin/activate
-pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
+pip install -r requirements.txt
 . venv36/bin/deactivate
 
 . venv37/bin/activate
-pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
+pip install -r requirements.txt
 . venv37/bin/deactivate
 
 . venv38/bin/activate
-pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
+pip install -r requirements.txt
 . venv38/bin/deactivate'''
       }
     }
