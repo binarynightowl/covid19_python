@@ -7,19 +7,19 @@ pipeline {
 
 PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
 if [ ! -d "venv35" ]; then
-        virtualenv --python=/usr/local/share/man/man1/python3.5.1 venv35
+        virtualenv --p python3.5 venv35
 fi
 
 if [ ! -d "venv36" ]; then
-        virtualenv --python=/usr/local/share/man/man1/python3.6.1 venv36
+        virtualenv -p python3.6 venv36
 fi
 
 if [ ! -d "venv37" ]; then
-        virtualenv --python=/usr/local/share/man/man1/python3.7.1 venv37
+        virtualenv -p python3.7 venv37
 fi
 
 if [ ! -d "venv38" ]; then
-        virtualenv --python=/usr/local/share/man/man1/python3.8.1 venv38
+        virtualenv -p python3.8 venv38
 fi'''
         sh '''#!/bin/sh
 
