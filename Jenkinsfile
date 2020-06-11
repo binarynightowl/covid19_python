@@ -212,28 +212,6 @@ pytest'''
       }
     }
 
-    stage('Code Check') {
-      parallel {
-        stage('Message') {
-          steps {
-            timestamps() {
-              echo 'Build passing! Now linting and checking code!'
-            }
-
-          }
-        }
-
-        stage('PyLint') {
-          steps {
-            sh '''. venv38/bin/activate
-pylint --generate-rcfile
-pylint -j 0 -r n covid19_data'''
-          }
-        }
-
-      }
-    }
-
     stage('Clean Up') {
       steps {
         timestamps() {
