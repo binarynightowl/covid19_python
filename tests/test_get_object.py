@@ -45,11 +45,11 @@ def test_Item():
     data = get_data.get_all_data([total_url, countries_url, states_url])
 
     Total = get_object.Item(total)
-    Total.rtrn_dat()
+    Total.rtrn_data()
     State = get_object.Item(state)
-    State.rtrn_dat()
+    State.rtrn_data()
     Country = get_object.Item(country)
-    Country.rtrn_dat()
+    Country.rtrn_data()
 
     assert Total.deaths == data[total]['Deaths']
     assert State.deaths == data[state]['Deaths']

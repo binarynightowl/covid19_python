@@ -57,7 +57,7 @@ class Item(Items):
         json = self.fullJSON[self.caller]
         self.json = json
 
-    def rtrn_dat(self):
+    def rtrn_data(self):
         self.rtrn_item_json()
         self._confirmed()
         self._deaths()

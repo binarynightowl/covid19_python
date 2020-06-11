@@ -66,54 +66,54 @@ remove_space = re.compile(r'\s+')
 def dataByCallerName():
     s = str(inspect.stack()[1][4]).split()[0][2:]
     item = Item(s)
-    item.rtrn_dat()
+    item.rtrn_data()
     return item
 
 
 def dataByCallerNameShort():
     s = str(inspect.stack()[1][4]).split()[0][2:]
     item = Item(states[s])
-    item.rtrn_dat()
+    item.rtrn_data()
     return item
 
 
 def dataByName(name):
     name = re.sub(remove_space, '', name).upper()
     item = Item(name)
-    item.rtrn_dat()
+    item.rtrn_data()
     return item
 
 
 def dataByNameShort(name):
     name = re.sub(remove_space, '', name).upper()
     item = Item(states[name].upper())
-    item.rtrn_dat()
+    item.rtrn_data()
     return item
 
 
 def jsonByCallerName():
     s = str(inspect.stack()[1][4]).split()[0][2:]
     item = Item(s)
-    item.rtrn_dat()
+    item.rtrn_data()
     return item.json
 
 
 def jsonByCallerNameShort():
     s = str(inspect.stack()[1][4]).split()[0][2:]
     item = Item(states[s])
-    item.rtrn_dat()
+    item.rtrn_data()
     return item.json
 
 
 def jsonByName(name):
     name = re.sub(remove_space, '', name).upper()
     item = Item(name)
-    item.rtrn_dat()
+    item.rtrn_data()
     return item.json
 
 
 def jsonByNameShort(name):
     name = re.sub(remove_space, '', name).upper()
     item = Item(states[name].upper())
-    item.rtrn_dat()
+    item.rtrn_data()
     return item.json
