@@ -227,7 +227,7 @@ pytest'''
           steps {
             sh '''. venv38/bin/activate
 pylint --generate-rcfile
-pylint -j 0 -r n'''
+pylint -j 0 -r n covid19_data'''
           }
         }
 
