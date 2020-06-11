@@ -115,6 +115,7 @@ fi'''
 pip install -r requirements.txt
 pip install pytest
 pip install pytest-cov
+pip install flake8
 deactivate'''
             timestamps() {
               echo 'venv38 has been successfully created!'
@@ -211,13 +212,40 @@ pytest'''
       }
     }
 
-    stage('Clean Workspace') {
-      steps {
-        timestamps() {
-          echo 'Tests Finished! Cleaning workspace'
+    stage('Code Check') {
+      parallel {
+        stage('Message') {
+          steps {
+            timestamps() {
+              echo 'Build passing! Now linting and checking code!'
+            }
+
+          }
         }
 
-        cleanWs(cleanWhenSuccess: true, skipWhenFailed: true)
+        stage('PyLint') {
+          steps {
+            sh 'pylint -j 0'
+          }
+        }
+
+        stage('Flake8') {
+          steps {
+            sh '''. venv38/bin/activate
+flake8
+flake8 --statistics'''
+          }
+        }
+
+      }
+    }
+
+    stage('Clean Up') {
+      steps {
+        timestamps() {
+          cleanWs(cleanWhenSuccess: true, skipWhenFailed: true)
+        }
+
       }
     }
 
