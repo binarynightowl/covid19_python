@@ -225,15 +225,9 @@ pytest'''
 
         stage('PyLint') {
           steps {
-            sh 'pylint -j 0'
-          }
-        }
-
-        stage('Flake8') {
-          steps {
             sh '''. venv38/bin/activate
-flake8
-flake8 --statistics'''
+pylint --generate-rcfile
+pylint -j 0 -r n'''
           }
         }
 
