@@ -222,7 +222,7 @@ pytest -n 4 --cov=covid19_data tests/'''
           echo 'Tests Finished! Cleaning workspace'
         }
 
-        cleanWs(cleanWhenSuccess: true, skipWhenFailed: true)
+        cleanWs(cleanWhenSuccess: true, cleanWhenFailure: true)
       }
     }
 
