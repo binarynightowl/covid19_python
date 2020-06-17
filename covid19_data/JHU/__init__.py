@@ -1,6 +1,6 @@
 from .get_data import get_all_data
 from .get_object import Item, Items
-from .dict_as_attribute import DictAsObj as DictToObj
+from ..dict_as_attribute import DictAsObj as DictToObj
 import inspect
 import re
 
