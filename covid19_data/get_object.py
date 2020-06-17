@@ -1,9 +1,10 @@
 from .get_data import get_all_data
+from .dict_as_attribute import DictAsObj as DictToObj
 
 
-class DictAsObj(object):
-    def __init__(self, d):
-        self.__dict__ = d
+# class DictAsObj(object):
+#     def __init__(self, d):
+#         self.__dict__ = d
 
 
 class Items:
@@ -43,8 +44,8 @@ class Items:
             '=Country_Region=%27US%27&outFields=Province_State,confirmed,deaths,recovered,'
             '%20active&resultRecordCount=200&f=pjson'
     }
-    covidTrackingAPI = DictAsObj(covidTracking)
-    johnHopkinsAPI = DictAsObj(johnHopkins)
+    covidTrackingAPI = DictToObj(covidTracking)
+    johnHopkinsAPI = DictToObj(johnHopkins)
     data = get_all_data([johnHopkinsAPI.total_url, johnHopkinsAPI.countries_url, johnHopkinsAPI.states_url])
 
     def __init__(self, s):
