@@ -1,5 +1,5 @@
-from covid19_data import get_object
-from covid19_data import get_data
+from covid19_data.JHU import get_object
+from covid19_data.JHU import get_data
 
 total_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/Coronavirus_2019_nCoV_Cases' \
             '/FeatureServer/1/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR' \
