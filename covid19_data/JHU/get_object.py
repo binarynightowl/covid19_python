@@ -3,10 +3,6 @@ from ..dict_as_attribute import DictAsObj as DictToObj
 
 
 class Items:
-    covidTracking = {
-        'us': 'https://covidtracking.com/api/v1/us/current.json',
-        'states': 'https://covidtracking.com/api/v1/states/current.json'
-    }
     johnHopkins = {
         'total_url':
             'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/Coronavirus_2019_nCoV_Cases'
@@ -39,7 +35,6 @@ class Items:
             '=Country_Region=%27US%27&outFields=Province_State,confirmed,deaths,recovered,'
             '%20active&resultRecordCount=200&f=pjson'
     }
-    covidTrackingAPI = DictToObj(covidTracking)
     johnHopkinsAPI = DictToObj(johnHopkins)
     data = get_all_data([johnHopkinsAPI.total_url, johnHopkinsAPI.countries_url, johnHopkinsAPI.states_url])
 
