@@ -2,11 +2,6 @@ from .get_data import get_all_data
 from .dict_as_attribute import DictAsObj as DictToObj
 
 
-# class DictAsObj(object):
-#     def __init__(self, d):
-#         self.__dict__ = d
-
-
 class Items:
     covidTracking = {
         'us': 'https://covidtracking.com/api/v1/us/current.json',

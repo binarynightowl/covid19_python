@@ -25,7 +25,7 @@ setup(
     classifiers=[
         'Intended Audience :: Developers',
         'Topic :: Software Development',
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Stable',
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ]
