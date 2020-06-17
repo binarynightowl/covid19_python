@@ -221,5 +221,11 @@ pytest'''
       }
     }
 
+    stage('Send Notifications') {
+      steps {
+        discordSend(successful: true, webhookURL: 'https://discordapp.com/api/webhooks/722655675036991548/C0xyBMz8qvCofDuxtQSsLOWPeawBfaOunhjfMy8OnMuLrOyxKoqe7GJrZnlqsF-IYXPa')
+      }
+    }
+
   }
 }
