@@ -216,13 +216,11 @@ pytest -n 4 --cov=covid19_data tests/'''
       }
     }
 
-    stage('Clean Workspace') {
+    stage('Clean Up') {
       steps {
         timestamps() {
-          echo 'Tests Finished! Cleaning workspace'
+          cleanWs(cleanWhenSuccess: true, skipWhenFailed: true)
         }
-
-        cleanWs(cleanWhenSuccess: true, cleanWhenFailure: true)
       }
     }
 
