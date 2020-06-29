@@ -1,6 +1,7 @@
 import json
 import urllib.request
 import re
+from ..dict_as_attribute import DictAsObj as DictToObj
 
 document = {
 }
