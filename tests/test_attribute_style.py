@@ -1,4 +1,5 @@
-from covid19_data.JHU import get_object
+from covid19_data import JHU
+import covid19_data
 from covid19_data.JHU import get_data
 
 total_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/Coronavirus_2019_nCoV_Cases' \
@@ -29,28 +30,23 @@ states_url = 'https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/servi' \
              '%20active&resultRecordCount=200&f=pjson'
 
 
-def test_Items():
-    name = 'Texas'
-    object = get_object.Item(name)
-    assert object.data == get_data.get_all_data([total_url, countries_url, states_url])
-    assert object.fullJSON == get_data.get_all_data([total_url, countries_url, states_url])
-    assert name == object.caller
-
-
-def test_Item():
-    total = 'Total'.upper()
-    state = 'Texas'.upper()
-    country = 'US'.upper()
-
+def test_attrState():
     data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert JHU.Texas.deaths == data['Texas'.upper()]['Deaths']
+    assert JHU.California.deaths == data['California'.upper()]['Deaths']
 
-    Total = get_object.Item(total)
-    Total.rtrn_data()
-    State = get_object.Item(state)
-    State.rtrn_data()
-    Country = get_object.Item(country)
-    Country.rtrn_data()
 
-    assert Total.deaths == data[total]['Deaths']
-    assert State.deaths == data[state]['Deaths']
-    assert Country.deaths == data[country]['Deaths']
+def test_attrTotal():
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert JHU.Total.deaths == data['Total'.upper()]['Deaths']
+
+
+def test_attrCountry():
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert JHU.China.deaths == data['China'.upper()]['Deaths']
+    assert JHU.UnitedKingdom.deaths == data['UnitedKingdom'.upper()]['Deaths']
+
+
+def test_attrUS():
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert JHU.US.deaths == data['US'.upper()]['Deaths']

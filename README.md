@@ -17,7 +17,8 @@ for more information on how data is obtained*)
     loaded ( *~* 1 second ), data for the World or any Country/State can be retrieved instantly
 * User friendly and simple to implement into your application
 * Very flexible and will return the data in multiple forms (*read documentation section for more info*)
-    * Can return a object with the data as attributes
+    * Can return data as a "Class Style Object" with attributes (*only requires one line of code, and is super easy to read!*)
+    * Can return an object with the data as attributes
     * Can return a JSON document
 * Super simplistic and lightweight and does not rely on any external python packages
 
@@ -37,8 +38,35 @@ $ python setup.py install
 # Documentation
 
 ## Usage
-There are two ways of getting data with covid19-data
-1. As an object with attributes of COVID data
+There are multiple ways of getting data with covid19-data
+1. Object and attribute style retrieval
+    * Gets the data by calling the class of the desired information source (*as of now only John Hopkins is supported but in
+     a future release multiple sources will be officially supported*), and the statistics for any entity are retrieved using
+      JavaScript style attributes 
+      ```python
+      from covid19_data import JHU
+    
+      # Format: [Organization providing data].[Entity to get data for].[Data that you wish to retrieve]
+      # for example to get data from John Hopkins University, follow the following examples
+        
+      print("The current number of COVID-19 recoveries in the US according to John Hopkins is: " + str(JHU.US.recovered))
+      print("The current number of confirmed COVID-19 cases in Texas according to John Hopkins is: " + str(JHU.Texas.confirmed))
+      print("The current number of COVID-19 deaths in California according to John Hopkins is: " + str(JHU.California.deaths))
+      print("The current number of worldwide COVID-19 deaths according to John Hopkins is: " + str(JHU.Total.deaths))
+      print("The current number of COVID-19 deaths in China according to John Hopkins is: " + str(JHU.China.deaths))
+      print("The current number of COVID-19 deaths in China according to John Hopkins is: " + str(JHU.UnitedKingdom.deaths))
+        ```
+        This should print something similar to:
+        ```
+        The current number of COVID-19 recoveries in the US according to John Hopkins is: 685164
+        The current number of confirmed COVID-19 cases in Texas according to John Hopkins is: 150851
+        The current number of COVID-19 deaths in California according to John Hopkins is: 5935
+        The current number of worldwide COVID-19 deaths according to John Hopkins is: 502947
+        The current number of COVID-19 deaths in China according to John Hopkins is: 4641
+        The current number of COVID-19 recoveries in the United Kingdom according to John Hopkins is: 1364
+        ```
+      
+2. As an object with attributes of COVID data
     * Get the data by name (*note: spacing and capitalization do not matter, EX: `total = covid19_data.dataByName("New 
     York")`, 
     `total = covid19_data.dataByName("newyork")`, and `total = covid19_data.dataByName("NEW YORK")` are all interchangable*)
@@ -78,7 +106,7 @@ There are two ways of getting data with covid19-data
         ```
         1353 67 33033
         ```
-2. As a JSON document 
+3. As a JSON document 
     * Get the json by name (*note: spacing and capitalization do not matter, EX: `total = covid19_data.dataByName("New 
     York")`, 
     `total = covid19_data.dataByName("newyork")`, and `total = covid19_data.dataByName("NEW YORK")` are all interchangable*)
@@ -125,7 +153,7 @@ There are two ways of getting data with covid19-data
         ```
   
 #### Sources
-This project utilizes [John Hopkins University](https://coronavirus.jhu.edu/map.html)'s 
+This package utilizes [John Hopkins University](https://coronavirus.jhu.edu/map.html)'s 
 [ArcGIS data layer](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/ArcGIS/rest/services/ncov_cases/FeatureServer) 
 to get its data. Please follow their terms of service and licensing when using their data in your application. The data layer 
 pulls data from the 

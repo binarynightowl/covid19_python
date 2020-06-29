@@ -25,6 +25,7 @@ fi'''
 pip install -r requirements.txt
 pip install pytest
 pip install pytest-cov
+pip install pytest-xdist
 deactivate'''
             timestamps() {
               echo 'venv35 has been successfully created!'
@@ -55,6 +56,7 @@ fi'''
 pip install -r requirements.txt
 pip install pytest
 pip install pytest-cov
+pip install pytest-xdist
 deactivate'''
             timestamps() {
               echo 'venv36 has been successfully created!'
@@ -85,6 +87,7 @@ fi'''
 pip install -r requirements.txt
 pip install pytest
 pip install pytest-cov
+pip install pytest-xdist
 deactivate'''
             timestamps() {
               echo 'venv37 has been successfully created!'
@@ -115,7 +118,7 @@ fi'''
 pip install -r requirements.txt
 pip install pytest
 pip install pytest-cov
-pip install flake8
+pip install pytest-xdist
 deactivate'''
             timestamps() {
               echo 'venv38 has been successfully created!'
@@ -146,6 +149,7 @@ fi'''
 pip install -r requirements.txt
 pip install pytest
 pip install pytest-cov
+pip install pytest-xdist
 deactivate'''
             timestamps() {
               echo 'venv_pypy3 has been successfully created!'
@@ -165,7 +169,7 @@ deactivate'''
 
 . venv35/bin/activate
 
-pytest'''
+pytest -n 4 --cov=covid19_data tests/'''
           }
         }
 
@@ -175,7 +179,7 @@ pytest'''
 
 . venv36/bin/activate
 
-pytest'''
+pytest -n 4 --cov=covid19_data tests/'''
           }
         }
 
@@ -185,7 +189,7 @@ pytest'''
 
 . venv37/bin/activate
 
-pytest'''
+pytest -n 4 --cov=covid19_data tests/'''
           }
         }
 
@@ -195,7 +199,7 @@ pytest'''
 
 . venv38/bin/activate
 
-pytest'''
+pytest -n 4 --cov=covid19_data tests/'''
           }
         }
 
@@ -205,7 +209,7 @@ pytest'''
 
 . venv_pypy3/bin/activate
 
-pytest'''
+pytest -n 4 --cov=covid19_data tests/'''
           }
         }
 
@@ -217,7 +221,6 @@ pytest'''
         timestamps() {
           cleanWs(cleanWhenSuccess: true, skipWhenFailed: true)
         }
-
       }
     }
 
