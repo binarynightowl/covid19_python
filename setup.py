@@ -20,7 +20,8 @@ setup(
     license='MIT',
     packages=setuptools.find_packages(),
     install_requires=[],
-    keywords='covid covid-19 corona coronavirus query hopkins python',
+    keywords='covid covid-19 corona coronavirus query hopkins python attribute fast easy powerful flexible json data '
+             'statistics city state total world john hopkins scraping',
     python_requires='>=3',
     classifiers=[
         'Intended Audience :: Developers',
