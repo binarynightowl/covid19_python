@@ -11,7 +11,7 @@ setup(
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
     description='A fast, powerful, and flexible way to get up to date COVID-19 data for any major city, state, '
-                'country, and total world wide data',
+                'country, and total world wide data, with just one line of code',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='http://github.com/binarynightowl/covid19_python',
