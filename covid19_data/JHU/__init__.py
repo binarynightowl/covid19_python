@@ -516,14 +516,14 @@ def dataByCallerNameShort():
 
 def dataByName(_name):
     _name = re.sub(remove_space, '', _name).upper()
-    item = Item(name)
+    item = Item(_name)
     item.rtrn_data()
     return item
 
 
 def dataByNameShort(_name):
     _name = re.sub(remove_space, '', _name).upper()
-    item = Item(states[name].upper())
+    item = Item(states[_name].upper())
     item.rtrn_data()
     return item
 
@@ -544,7 +544,7 @@ def jsonByCallerNameShort():
 
 def jsonByName(_name):
     _name = re.sub(remove_space, '', _name).upper()
-    item = Item(name)
+    item = Item(_name)
     item.rtrn_data()
     return item.json
 
