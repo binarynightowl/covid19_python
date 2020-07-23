@@ -551,7 +551,7 @@ def jsonByName(_name):
 
 def jsonByNameShort(_name):
     _name = re.sub(remove_space, '', _name).upper()
-    item = Item(states[name].upper())
+    item = Item(states[_name].upper())
     item.rtrn_data()
     return item.json
 
