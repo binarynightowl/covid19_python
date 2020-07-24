@@ -13,7 +13,7 @@ states = {
     'CA': 'California',
     'CO': 'Colorado',
     'CT': 'Connecticut',
-    'DC': 'DistrictofColumbia',
+    'DC': 'DistrictOfColumbia',
     'DE': 'Delaware',
     'FL': 'Florida',
     'GA': 'Georgia',
@@ -79,7 +79,7 @@ countries = [
     "Russia",
     "Sweden",
     "Switzerland",
-    "United Kingdom",
+    "UnitedKingdom",
     "US",
     "Spain",
     "Mexico",
@@ -96,7 +96,7 @@ countries = [
     "Algeria",
     "Andorra",
     "Angola",
-    "Antigua and Barbuda",
+    "AntiguaAndBarbuda",
     "Argentina",
     "Armenia",
     "Azerbaijan",
@@ -110,35 +110,35 @@ countries = [
     "Benin",
     "Bhutan",
     "Bolivia",
-    "Bosnia and Herzegovina",
+    "BosniaAndHerzegovina",
     "Botswana",
     "Brunei",
     "Bulgaria",
-    "Burkina Faso",
+    "BurkinaFaso",
     "Burma",
     "Burundi",
-    "Cabo Verde",
+    "CaboVerde",
     "Cambodia",
     "Cameroon",
-    "Central African Republic",
+    "CentralAfricanRepublic",
     "Chad",
     "Comoros",
-    "Congo (Brazzaville)",
-    "Congo (Kinshasa)",
-    "Costa Rica",
-    "Cote d'Ivoire",
+    "CongoBrazzaville",
+    "CongoKinshasa",
+    "CostaRica",
+    "CotedIvoire",
     "Croatia",
     "Cuba",
     "Cyprus",
     "Czechia",
-    "Diamond Princess",
+    "DiamondPrincess",
     "Djibouti",
     "Dominica",
-    "Dominican Republic",
+    "DominicanRepublic",
     "Ecuador",
     "Egypt",
-    "El Salvador",
-    "Equatorial Guinea",
+    "ElSalvador",
+    "EquatorialGuinea",
     "Eritrea",
     "Estonia",
     "Eswatini",
@@ -152,10 +152,10 @@ countries = [
     "Grenada",
     "Guatemala",
     "Guinea",
-    "Guinea-Bissau",
+    "GuineaBissau",
     "Guyana",
     "Haiti",
-    "Holy See",
+    "HolySee",
     "Honduras",
     "Hungary",
     "Indonesia",
@@ -166,7 +166,7 @@ countries = [
     "Jordan",
     "Kazakhstan",
     "Kenya",
-    "Korea, South",
+    "KoreaSouth",
     "Kosovo",
     "Kuwait",
     "Kyrgyzstan",
@@ -179,7 +179,7 @@ countries = [
     "Liechtenstein",
     "Lithuania",
     "Luxembourg",
-    "MS Zaandam",
+    "MsZaandam",
     "Madagascar",
     "Malawi",
     "Malaysia",
@@ -196,14 +196,14 @@ countries = [
     "Mozambique",
     "Namibia",
     "Nepal",
-    "New Zealand",
+    "NewZealand",
     "Nicaragua",
     "Niger",
     "Nigeria",
-    "North Macedonia",
+    "NorthMacedonia",
     "Oman",
     "Panama",
-    "Papua New Guinea",
+    "PapuaNewGuinea",
     "Paraguay",
     "Philippines",
     "Poland",
@@ -211,43 +211,43 @@ countries = [
     "Qatar",
     "Romania",
     "Rwanda",
-    "Saint Kitts and Nevis",
-    "Saint Lucia",
-    "Saint Vincent and the Grenadines",
-    "San Marino",
-    "Sao Tome and Principe",
-    "Saudi Arabia",
+    "SaintKittsAndNevis",
+    "SaintLucia",
+    "SaintVincentAndTheGrenadines",
+    "SanMarino",
+    "SaoTomeAndPrincipe",
+    "SaudiArabia",
     "Senegal",
     "Serbia",
     "Seychelles",
-    "Sierra Leone",
+    "SierraLeone",
     "Singapore",
     "Slovakia",
     "Slovenia",
     "Somalia",
-    "South Africa",
-    "South Sudan",
-    "Sri Lanka",
+    "SouthAfrica",
+    "SouthSudan",
+    "SriLanka",
     "Sudan",
     "Suriname",
     "Syria",
-    "Taiwan*",
+    "Taiwan",
     "Tajikistan",
     "Tanzania",
     "Thailand",
-    "Timor-Leste",
+    "TimorLeste",
     "Togo",
-    "Trinidad and Tobago",
+    "TrinidadAndTobago",
     "Tunisia",
     "Turkey",
     "Uganda",
-    "United Arab Emirates",
+    "UnitedArabEmirates",
     "Uruguay",
     "Uzbekistan",
     "Venezuela",
     "Vietnam",
-    "West Bank and Gaza",
-    "Western Sahara",
+    "WestBankAndGaza",
+    "WesternSahara",
     "Yemen",
     "Zambia",
     "Zimbabwe"
@@ -287,7 +287,7 @@ Albania = DictToObj({})
 Algeria = DictToObj({})
 Andorra = DictToObj({})
 Angola = DictToObj({})
-AntiguaandBarbuda = DictToObj({})
+AntiguaAndBarbuda = DictToObj({})
 Argentina = DictToObj({})
 Armenia = DictToObj({})
 Azerbaijan = DictToObj({})
@@ -301,7 +301,7 @@ Belize = DictToObj({})
 Benin = DictToObj({})
 Bhutan = DictToObj({})
 Bolivia = DictToObj({})
-BosniaandHerzegovina = DictToObj({})
+BosniaAndHerzegovina = DictToObj({})
 Botswana = DictToObj({})
 Brunei = DictToObj({})
 Bulgaria = DictToObj({})
@@ -314,8 +314,8 @@ Cameroon = DictToObj({})
 CentralAfricanRepublic = DictToObj({})
 Chad = DictToObj({})
 Comoros = DictToObj({})
-Congo = DictToObj({})
-Congo = DictToObj({})
+CongoBrazzaville = DictToObj({})
+CongoKinshasa = DictToObj({})
 CostaRica = DictToObj({})
 CotedIvoire = DictToObj({})
 Croatia = DictToObj({})
@@ -401,11 +401,11 @@ Portugal = DictToObj({})
 Qatar = DictToObj({})
 Romania = DictToObj({})
 Rwanda = DictToObj({})
-SaintKittsandNevis = DictToObj({})
+SaintKittsAndNevis = DictToObj({})
 SaintLucia = DictToObj({})
-SaintVincentandtheGrenadines = DictToObj({})
+SaintVincentAndTheGrenadines = DictToObj({})
 SanMarino = DictToObj({})
-SaoTomeandPrincipe = DictToObj({})
+SaoTomeAndPrincipe = DictToObj({})
 SaudiArabia = DictToObj({})
 Senegal = DictToObj({})
 Serbia = DictToObj({})
@@ -427,7 +427,7 @@ Tanzania = DictToObj({})
 Thailand = DictToObj({})
 TimorLeste = DictToObj({})
 Togo = DictToObj({})
-TrinidadandTobago = DictToObj({})
+TrinidadAndTobago = DictToObj({})
 Tunisia = DictToObj({})
 Turkey = DictToObj({})
 Uganda = DictToObj({})
@@ -436,7 +436,7 @@ Uruguay = DictToObj({})
 Uzbekistan = DictToObj({})
 Venezuela = DictToObj({})
 Vietnam = DictToObj({})
-WestBankandGaza = DictToObj({})
+WestBankAndGaza = DictToObj({})
 WesternSahara = DictToObj({})
 Yemen = DictToObj({})
 Zambia = DictToObj({})
@@ -450,7 +450,7 @@ Arizona = DictToObj({})
 California = DictToObj({})
 Colorado = DictToObj({})
 Connecticut = DictToObj({})
-DistrictofColumbia = DictToObj({})
+DistrictOfColumbia = DictToObj({})
 Delaware = DictToObj({})
 Florida = DictToObj({})
 Georgia = DictToObj({})
@@ -514,16 +514,16 @@ def dataByCallerNameShort():
     return item
 
 
-def dataByName(name):
-    name = re.sub(remove_space, '', name).upper()
-    item = Item(name)
+def dataByName(_name):
+    _name = re.sub(remove_space, '', _name).upper()
+    item = Item(_name)
     item.rtrn_data()
     return item
 
 
-def dataByNameShort(name):
-    name = re.sub(remove_space, '', name).upper()
-    item = Item(states[name].upper())
+def dataByNameShort(_name):
+    _name = re.sub(remove_space, '', _name).upper()
+    item = Item(states[_name].upper())
     item.rtrn_data()
     return item
 
@@ -542,16 +542,16 @@ def jsonByCallerNameShort():
     return item.json
 
 
-def jsonByName(name):
-    name = re.sub(remove_space, '', name).upper()
-    item = Item(name)
+def jsonByName(_name):
+    _name = re.sub(remove_space, '', _name).upper()
+    item = Item(_name)
     item.rtrn_data()
     return item.json
 
 
-def jsonByNameShort(name):
-    name = re.sub(remove_space, '', name).upper()
-    item = Item(states[name].upper())
+def jsonByNameShort(_name):
+    _name = re.sub(remove_space, '', _name).upper()
+    item = Item(states[_name].upper())
     item.rtrn_data()
     return item.json
 

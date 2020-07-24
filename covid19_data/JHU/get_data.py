@@ -1,20 +1,21 @@
 import json
 import urllib.request
 import re
-from ..dict_as_attribute import DictAsObj as DictToObj
 
 document = {
 }
 
 
 def get_data(url):
-    data = json.loads(urllib.request.urlopen(url).read().decode())
-    doc = data['features']  # remove headers and return just the data
+    req_headers = {'User-Agent': 'COVID19-Data'}
+    req = urllib.request.Request(url, None, req_headers)
+    data = json.loads(urllib.request.urlopen(req).read().decode())
+    doc = data['features']
     return doc
 
 
 def get_all_data(links_list):
-    remove_space = re.compile(r'\s+')
+    remove_space = re.compile('[^a-zA-Z]')
     for link in links_list:
         doc = get_data(link)
         for item in doc:
@@ -34,3 +35,10 @@ def get_all_data(links_list):
                 document.update({name: attributes})
 
     return document
+
+
+def get_data_from_api():
+    req_headers = {'User-Agent': 'COVID19-Data'}
+    req = urllib.request.Request('https://api.bnry.host/covid19-data', None, req_headers)
+    data = json.loads(urllib.request.urlopen(req).read().decode())
+    return data
