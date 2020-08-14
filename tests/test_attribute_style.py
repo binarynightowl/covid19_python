@@ -50,3 +50,11 @@ def test_attrCountry():
 def test_attrUS():
     data = get_data.get_all_data([total_url, countries_url, states_url])
     assert JHU.US.deaths == data['US'.upper()]['Deaths']
+
+
+def test_attrState_short():
+    data = get_data.get_all_data([total_url, countries_url, states_url])
+    assert JHU.TX.deaths == data['Texas'.upper()]['Deaths']
+    assert JHU.CA.deaths == data['California'.upper()]['Deaths']
+    assert JHU.TX.deaths == JHU.Texas.deaths
+    assert JHU.CA.deaths == JHU.California.deaths
