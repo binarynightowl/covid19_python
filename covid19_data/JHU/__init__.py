@@ -499,6 +499,63 @@ Wisconsin = DictToObj({})
 WestVirginia = DictToObj({})
 Wyoming = DictToObj({})
 
+AK = DictToObj({})
+AL = DictToObj({})
+AR = DictToObj({})
+AS = DictToObj({})
+AZ = DictToObj({})
+CA = DictToObj({})
+CO = DictToObj({})
+CT = DictToObj({})
+DC = DictToObj({})
+DE = DictToObj({})
+FL = DictToObj({})
+GA = DictToObj({})
+GU = DictToObj({})
+HI = DictToObj({})
+IA = DictToObj({})
+ID = DictToObj({})
+IL = DictToObj({})
+IN = DictToObj({})
+KS = DictToObj({})
+KY = DictToObj({})
+LA = DictToObj({})
+MA = DictToObj({})
+MD = DictToObj({})
+ME = DictToObj({})
+MI = DictToObj({})
+MN = DictToObj({})
+MO = DictToObj({})
+MP = DictToObj({})
+MS = DictToObj({})
+MT = DictToObj({})
+NC = DictToObj({})
+ND = DictToObj({})
+NE = DictToObj({})
+NH = DictToObj({})
+NJ = DictToObj({})
+NM = DictToObj({})
+NV = DictToObj({})
+NY = DictToObj({})
+OH = DictToObj({})
+OK = DictToObj({})
+OR = DictToObj({})
+PA = DictToObj({})
+PR = DictToObj({})
+RI = DictToObj({})
+SC = DictToObj({})
+SD = DictToObj({})
+TN = DictToObj({})
+TX = DictToObj({})
+UT = DictToObj({})
+VA = DictToObj({})
+VI = DictToObj({})
+VT = DictToObj({})
+WA = DictToObj({})
+WI = DictToObj({})
+WV = DictToObj({})
+WY = DictToObj({})
+
 
 def dataByCallerName():
     s = str(inspect.stack()[1][4]).split()[0][2:]
@@ -572,6 +629,13 @@ for state in states:
     data_dict = {"deaths": obj.deaths,
                  "cases": obj.cases, "recovered": obj.recovered, "confirmed": obj.cases}
     globals()[name] = DictToObj(data_dict)
+
+for code, state in states.items():
+    name = states[code]
+    obj = dataByName(name)
+    data_dict = {"deaths": obj.deaths,
+                 "cases": obj.cases, "recovered": obj.recovered, "confirmed": obj.cases}
+    globals()[code] = DictToObj(data_dict)
 
 for country in countries:
     name = country
