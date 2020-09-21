@@ -53,8 +53,8 @@ There are multiple ways of getting data with covid19-data
       # JHU.China.deaths
         
       print("The number of COVID-19 recoveries in the US: " + str(JHU.US.recovered))
-      print("The number of confirmed COVID-19 cases in Texas: " + str(JHU.Texas.confirmed))
-      print("The number of COVID-19 deaths in California: " + str(JHU.California.deaths))
+      print("The number of confirmed COVID-19 cases in Texas: " + str(JHU.Texas.confirmed))   # JHU.TX.confirmed also works
+      print("The number of COVID-19 deaths in California: " + str(JHU.CA.deaths))     # JHU.California also works
       print("The number of worldwide COVID-19 deaths: " + str(JHU.Total.deaths))
       print("The number of COVID-19 deaths in China: " + str(JHU.China.deaths))
       print("The number of COVID-19 deaths in UK: " + str(JHU.UnitedKingdom.deaths))
