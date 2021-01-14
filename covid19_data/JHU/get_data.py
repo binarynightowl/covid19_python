@@ -7,7 +7,7 @@ document = {
 
 
 def get_data(url):
-    req_headers = {'User-Agent': 'COVID19-Data'}
+    req_headers = {'User-Agent': 'COVID19-Data', 'module_version': "1.2.0"}
     req = urllib.request.Request(url, None, req_headers)
     data = json.loads(urllib.request.urlopen(req).read().decode())
     doc = data['features']
